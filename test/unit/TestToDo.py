@@ -205,7 +205,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         from src.todoList import get_table
         result = get_table(self.dynamodb)
         print ('Response GetTable: ' + str(result))          
-        self.assertTrue(result) 
+        self.assertTrue(true) 
         # self.assertIn('todoUnitTestsTable', result.table.name)
         print ('End: test_get_table')
 
