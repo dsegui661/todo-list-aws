@@ -213,7 +213,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('---------------------')
         print ('Start: test_get_table_none')
         from src.todoList import get_table
-        result = get_table('pepito')
+        result = get_table(None)
         print ('Response GetTable: ' + str(result))          
         self.assertTrue(result) 
         # self.assertIn('todoUnitTestsTable', result.table.name)
