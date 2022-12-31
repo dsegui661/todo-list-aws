@@ -204,10 +204,9 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('Start: test_get_table')
         from src.todoList import get_table
         result = get_table(self.dynamodb)
-        print ('Response GetTable' + str(result))         
-        # self.assertTrue(len(result) == 1) 
-        # self.assertTrue(self.table) # check if we got a result
-        # self.assertIn('staging-TodosDynamoDbTable', self.table.name) # check if the table name is 'Movies'
+        print ('Response GetTable: ' + str(result))          
+        self.assertTrue(result.table) 
+        self.assertIn('todoUnitTestsTable', result.table.name)
         print ('End: test_get_table')
 
 if __name__ == '__main__':
