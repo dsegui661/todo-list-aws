@@ -209,15 +209,6 @@ class TestDatabaseFunctions(unittest.TestCase):
         # self.assertIn('todoUnitTestsTable', result.table.name)
         print ('End: test_get_table')
         
-    def test_get_table_none(self):
-        print ('---------------------')
-        print ('Start: test_get_table_none')
-        from src.todoList import get_table
-        result = get_table(None)
-        print ('Response GetTable: ' + str(result))          
-        self.assertTrue(result) 
-        # self.assertIn('todoUnitTestsTable', result.table.name)
-        print ('End: test_get_table_none')
 
 if __name__ == '__main__':
     unittest.main()
