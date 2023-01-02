@@ -203,7 +203,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('---------------------')
         print ('Start: test_error_get_table')
         from src.todoList import get_table 
-        result = get_table()
+        result = get_table(self.dynamodb)
         print ('Response GetTable: ' + str(result))          
         self.assertTrue(result) 
         print ('End: test_error_get_table')
