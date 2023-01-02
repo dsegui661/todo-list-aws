@@ -212,7 +212,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         print ('---------------------')
         print ('Start: test_error_get_item')
         from src.todoList import get_item
-        result = get_item('3')
+        result = get_item('3',self.dynamodb)
         print ('Response GetTable: ' + str(result))          
         self.assertTrue(result) 
         print ('End: test_error_get_item')
