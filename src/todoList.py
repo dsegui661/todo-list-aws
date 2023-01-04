@@ -18,7 +18,6 @@ def get_table(dynamodb=None):
         dynamodb = boto3.resource("dynamodb")
     # fetch todo from the database
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
-    print('Dummy para superar el 80%')
     return table
 
 
@@ -35,6 +34,14 @@ def get_item(key, dynamodb=None):
         print(e.response['Error']['Message'])
     else:
         print('Result getItem:'+str(result))
+        
+        print('Inicio Dummy para superar el 80%')
+        if 'Item' in result:
+            print('<---->')
+            print(result['Item'])
+            print('<---->')
+        print('Fin Dummy para superar el 80%')    
+        
         if 'Item' in result:
             return result['Item']
 
