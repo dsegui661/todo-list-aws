@@ -4,9 +4,9 @@ set -x
 python3.7 -m venv todo-list-aws
 source todo-list-aws/bin/activate
 python -m pip install --upgrade pip
-pip install pyopenssl --upgrade # evita el error de OpenSSL
-python -m pip install awscli
-python -m pip install aws-sam-cli
+# pip3 install --upgrade cryptography==38.0.4 # evita el error de OpenSSL
+# python -m pip install awscli
+# python -m pip install aws-sam-cli
 # For integration testing
 python -m pip install pytest
 pwd
