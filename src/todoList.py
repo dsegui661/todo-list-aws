@@ -39,7 +39,7 @@ def get_item(key, dynamodb=None):
             print('<---->')
             print(result['Item'])
             print('<---->')
-        print('Fin Dummy para superar el 80%')    
+        print('Fin Dummy para superar el 80%')
         if 'Item' in result:
             return result['Item']
 
