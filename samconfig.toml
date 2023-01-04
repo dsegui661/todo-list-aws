@@ -29,3 +29,7 @@ region = "us-east-1"
 capabilities = "CAPABILITY_IAM"
 parameter_overrides = "Stage=\"production\""
 image_repositories = []
+confirm_changeset = true
+s3_bucket = "practica1-production"
+disable_rollback = true
+
