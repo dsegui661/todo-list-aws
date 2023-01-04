@@ -21,6 +21,8 @@ region = "us-east-1"
 capabilities = "CAPABILITY_IAM"
 parameter_overrides = "Stage=\"staging\""
 image_repositories = []
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-4fligbjrt62u"
+disable_rollback = true
 
 [production]
 [production.deploy]

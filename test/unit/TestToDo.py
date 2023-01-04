@@ -198,6 +198,16 @@ class TestDatabaseFunctions(unittest.TestCase):
         # Testing file functions
         self.assertRaises(TypeError, delete_item("", self.dynamodb))
         print ('End: test_delete_todo_error')
+    
+    def test_error_get_table(self):
+        print ('---------------------')
+        print ('Start: test_error_get_table')
+        from src.todoList import get_table 
+        result = get_table()
+        print ('Response GetTable: ' + str(result))          
+        self.assertTrue(result == None) 
+        print ('End: test_error_get_table')
+
 
 if __name__ == '__main__':
     unittest.main()
