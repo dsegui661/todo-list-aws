@@ -19,10 +19,9 @@ pipeline {
                     git merge develop
                 """, label: "Merging code to master"
                 
-               
-               sh script: """ git push origin master """, label: "Push to master"
-               
-
+                sshagent(['github']) {
+                    sh "git push origin master"
+                }
                 
             }
         }
