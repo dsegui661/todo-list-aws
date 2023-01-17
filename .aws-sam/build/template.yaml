@@ -117,6 +117,22 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
+  TranslateTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: TranslateTodoFunction
+      Role:
+        Fn::Sub: arn:aws:iam::${AWS::AccountId}:role/LabRole
+      Handler: translate.translate
+      Runtime: python3.7
+      Events:
+        Create:
+          Type: Api
+          Properties:
+            Path: /todos/{id}/{lang}
+            Method: get
+    Metadata:
+      SamResourceId: TranslateTodoFunction
 Outputs:
   BaseUrlApi:
     Description: Base URL of API
@@ -142,3 +158,7 @@ Outputs:
     Description: API Gateway endpoint URL for ${opt:stage} stage for Delete TODO
     Value:
       Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/todos/{id}
+  TranslateTodoApi:
+    Description: API Gateway endpoint URL for ${opt:stage} stage for Get TODO
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/todos/{id}/{lang}

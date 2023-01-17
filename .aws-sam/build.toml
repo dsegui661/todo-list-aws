@@ -8,6 +8,6 @@ architecture = "x86_64"
 handler = "create.create"
 manifest_hash = ""
 packagetype = "Zip"
-functions = ["CreateTodoFunction", "ListTodosFunction", "GetTodoFunction", "UpdateTodoFunction", "DeleteTodoFunction"]
+functions = ["CreateTodoFunction", "ListTodosFunction", "GetTodoFunction", "UpdateTodoFunction", "DeleteTodoFunction", "TranslateTodoFunction"]
 
 [layer_build_definitions]
