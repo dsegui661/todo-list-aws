@@ -26,7 +26,7 @@ class TestApi(unittest.TestCase):
         #Add TODO
         url = BASE_URL+"/todos"
         data = {
-         "text": "Prueba de integracion"
+         "text": "Integration text example"
         }
         response = requests.post(url, data=json.dumps(data))
         json_response = response.json()
@@ -55,7 +55,7 @@ class TestApi(unittest.TestCase):
         print('Starting - integration test Add TODO')
         url = BASE_URL+"/todos"
         data = {
-         "text": "Prueba de integracion"
+         "text": "Integration text example"
         }
         response = requests.post(url, data=json.dumps(data))
         json_response = response.json()
