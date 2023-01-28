@@ -44,7 +44,7 @@ def get_item(key, dynamodb=None):
             return result['Item']
 
 
-def get_item_translate(key, lang, dynamodb=None):
+def get_item_translate(key, langDest, dynamodb=None):
     table = get_table(dynamodb)
     try:
         result = table.get_item(
@@ -60,14 +60,15 @@ def get_item_translate(key, lang, dynamodb=None):
         # txtToTranslate = result['Item'][0]['text']
         txtToTranslate = 'Hola'
         print('Texto para traducir:'+txtToTranslate)
+        print('Lenguaje para traducir:'+langDest)
         # Proceso de Traduccion
         sourceLanguage = 'es'
-        targetLanguage = lang
+        targetLanguage = str(langDest)        
         trans = boto3.client(service_name='translate', region_name='us-east-1',
                              use_ssl=True)
         result = trans.translate_text(txtToTranslate,
-                                      SourceLanguageCode=sourceLanguage,
-                                      TargetLanguageCode=targetLanguage)
+                                      sourceLanguage,
+                                      langDest)
         print('Result Translate:' + result)
         print('TranslatedText: ' + result.get('TranslatedText'))
         return result
