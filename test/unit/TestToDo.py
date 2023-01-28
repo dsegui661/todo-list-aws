@@ -44,6 +44,7 @@ class TestDatabaseFunctions(unittest.TestCase):
         self.dynamodb = None
         print ('End: tearDown')
 
+
     def test_table_exists(self):
         print ('---------------------')
         print ('Start: test_table_exists')
