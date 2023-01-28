@@ -63,7 +63,6 @@ def get_item_translate(key, langDest, dynamodb=None):
         print('Lenguaje para traducir:'+langDest)
         # Proceso de Traduccion
         sourceLanguage = 'es'
-        targetLanguage = str(langDest)        
         trans = boto3.client(service_name='translate', region_name='us-east-1',
                              use_ssl=True)
         result = trans.translate_text(txtToTranslate,
