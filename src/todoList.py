@@ -63,8 +63,11 @@ def get_item_translate(key, langDest, dynamodb=None):
         print('Lenguaje para traducir:'+langDest)
         # Proceso de Traduccion
         sourceLanguage = 'es'
+        access_key_id = os.getenv('MY_ACCESS_KEY_ID')
+        secret_access_key = os.getenv('MY_SECRET_ACCESS_KEY')
         trans = boto3.client(service_name='translate', region_name='us-east-1',
-                             use_ssl=True)
+                             use_ssl=True, aws_access_key_id=access_key_id,
+                             aws_secret_access_key=secret_access_key)
         result = trans.translate_text(Text=txtToTranslate,
                                       SourceLanguageCode=sourceLanguage,
                                       TargetLanguageCode=langDest)
