@@ -57,7 +57,8 @@ def get_item_translate(key, lang, dynamodb=None):
         print(e.response['Error']['Message'])
     else:
         print('Result getItem para traducir:'+str(result))
-        txtToTranslate = result['Item'][0]['text']
+        # txtToTranslate = result['Item'][0]['text']
+        txtToTranslate = 'Hola'
         print('Texto para traducir:'+txtToTranslate)
         # Proceso de Traduccion
         sourceLanguage = 'es'
