@@ -103,7 +103,7 @@ class TestDatabaseFunctions(unittest.TestCase):
             self.text,
             responseGet['text'])
         print ('End: test_get_todo')
-    
+ 
     def test_list_todo(self):
         print ('---------------------')
         print ('Start: test_list_todo')
