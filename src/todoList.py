@@ -70,8 +70,8 @@ def get_item_translate(key, lang, dynamodb=None):
         print('Result Translate:' + result)
         print('TranslatedText: ' + result.get('TranslatedText'))
         return result
-            
-            
+
+
 def get_items(dynamodb=None):
     table = get_table(dynamodb)
     # fetch todo from the database
